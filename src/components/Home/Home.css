@@ -1,0 +1,9 @@
+.home{
+    padding: 0px !important;
+}
+
+.home .upper-fold{
+    height: 100vh !important;
+    background-image: url('https://4b15vr13762d1t2kqp47j8d4-wpengine.netdna-ssl.com/wp-content/uploads/tools-690038_1280-1024x682.jpg');
+    background-size: cover;
+}
