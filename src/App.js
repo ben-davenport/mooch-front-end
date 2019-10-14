@@ -8,7 +8,8 @@ import LoginPage from './components/LoginPage';
 import SingleTool from './components/SingleTool/SingleTool';
 import SearchTool from './components/Search/SearchTool'
 import Account from './components/Account/Account'
-import Messages from './components/Messages/Messages'
+import Messages2 from './components/Messages/messages2'
+
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
 				{/* <Route exact path="/tool/:toolId" component={SingleTool} /> */}
 				<Route exact path="/account" component={Account}/>
 				<Route path="/tool/find" component={SearchTool} />
-				<Route path="/messages" component={Messages} />
+				<Route path="/messages" component={Messages2} />
+
 			</div>
 		</Router>
 	);

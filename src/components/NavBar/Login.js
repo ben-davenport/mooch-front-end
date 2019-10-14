@@ -11,7 +11,7 @@ class Login extends React.Component{
         if(this.props.auth.msg !== prevProps.auth.msg){
             let msg = "";
             if(this.props.auth.msg === "badPass"){
-                msg = "We do have a user with this password."
+                msg = "We do not have a user with this password."
             }else if(this.props.auth.msg === "loggedIn"){
                 this.props.closeModal();
             }else if(this.props.auth.msg === "noEmail"){

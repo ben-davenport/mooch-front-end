@@ -97,10 +97,10 @@ class LendTool extends Component{
                         <div className="input-field col s6">
                             <select value={this.state.availability} onChange={this.changeAvailability} >
                                 <option value="" disabled>Choose your option</option>
-                                <option value="1">Weekdays Only</option>
-                                <option value="2">Weekends Only</option>
-                                <option value="3">Every Day</option>
-                                <option value="4">By Request Only</option>
+                                <option value="Weekdays Only">Weekdays Only</option>
+                                <option value="Weekends Only">Weekends Only</option>
+                                <option value="Every Day">Every Day</option>
+                                <option value="By Request">By Request Only</option>
                             </select>
                             <label>Days Available</label>
                         </div>                    
