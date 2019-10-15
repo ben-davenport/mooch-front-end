@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { object } from 'prop-types';
 
-export default(data)=>{
+export default async (query)=>{
 
-    const searchUrl = `${window.apiHost}/tools?q=${data}`
-    const axiosResponse = axios.get(searchUrl,data);
-    // console.log(axiosResponse)
+    const searchUrl = `${window.apiHost}/tools?q=${query}`
+    const {msg, data} = await axios.get(searchUrl);
     // Waiting. Waiting. Waiting. (via redux-promise - our middleware)
     return {
         type:"search",
-        payload: axiosResponse
+        payload: {msg, data}
     }
 }

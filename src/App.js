@@ -20,7 +20,7 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route path="/tool/newTool" component={LendTool} />
 				<Route exact path="/login" component={LoginPage} />
-				{/* <Route exact path="/tool/:toolId" component={SingleTool} /> */}
+				{/* <Route exact path="/tool/:tool_id" component={SingleTool} /> */}
 				<Route exact path="/account" component={Account}/>
 				<Route path="/tool/find" component={SearchTool} />
 				<Route path="/messages" component={Messages2} />

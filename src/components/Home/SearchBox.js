@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './SearchBox.css';
 
 class SearchBox extends Component{
-
+    constructor(props){
+        super(props);
+        this.routeChange = this.routeChange.bind(this)
+    }
     state = {
         where: "",
         search: "",
@@ -16,34 +20,20 @@ class SearchBox extends Component{
         this.setState({search: e.target.value})
     }
 
+    routeChange() {
+        let path = `/tool/find`;
+        this.props.history.push(path);
+    }
+
     render(){
         return(
-            <div className="home-search-box col m4">
-                <h1>Help others, mooch a little, get projects done.</h1>
-                
-                <div className="form">
-                    <div className="col m12">
-                        <div className="input-field" id="where">
-                            <input onChange={this.handleWhere} placeholder="Your Location" value={this.state.where} type="text" className="validate" />
-                        </div>
-                    </div>
-                    <div className="col m12">
-                        <div className="input-field" id="tool">
-                            <input onChange={this.handleSearch}  value={this.state.search} type="text" className="validate" />
-                            <label htmlFor="search">Search</label>
-                        </div>
-                    </div>
-                    <div className="col m12 submit-btn">
-                        <div className="input-field" id="submit-btn">
-                            <input className="btn-large waves-effect waves-light red accent-2" type="submit" />
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>            
+            <div className="home-search-box col s9">
+                <h1>Help neighbors. Mooch a little. Get your projects done.
+                    <button className="btn-large waves-effect waves-light grey accent-1 button" onClick={this.routeChange}>Let's Go!</button>
+                </h1>
+            </div>
         )
     }
 }
 
-export default SearchBox;
+export default withRouter(SearchBox);

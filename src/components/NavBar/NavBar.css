@@ -4,6 +4,10 @@
     top: 0;
     left: 0;
 }
+.nav .left{
+    font-size: 30px;
+    margin-left: 15px;
+}
 
 .nav nav{
     box-shadow: none;
@@ -67,59 +71,6 @@
     background-color: #484848;
 
 }
-
-.facebook-login{
-    cursor: pointer;
-    transition-property: background, border-color, color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: normal;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 800;
-    padding-left: 22px;
-    padding-right: 22px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    background: rgb(69, 104, 178);
-    border-color: transparent;    
-    margin-top: 30px;
-    margin-bottom: 8px;
-}
-
-.google-login{
-    cursor: pointer;
-    transition-property: background, border-color, color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: normal;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 800;
-    color: rgb(72, 72, 72);
-    text-decoration: none;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    background: rgb(255, 255, 255);
-    border-color: rgb(118, 118, 118);
-}    
 
 .email-login{
     color: #ffffff;    

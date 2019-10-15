@@ -78,7 +78,7 @@ class NavBar extends Component{
     }
 
     render(){
-        let navColor = "transparent";
+        let navColor = "grey darken-3";
         if(this.props.location.pathname !== '/'){
             navColor = "black";
         }

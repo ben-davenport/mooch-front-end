@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import loginAction from '../../actions/loginAction';
+import './Login.css';
 
 class Login extends React.Component{
     state = {email: "", password: "", msg: ""}

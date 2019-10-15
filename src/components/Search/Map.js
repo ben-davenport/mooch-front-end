@@ -11,9 +11,9 @@ class Map extends React.Component {
         super(props);
         this.state = {
             viewport: {
-            latitude: 74.0060,
-            longitude: 40.7128,
-            zoom: 16,
+            latitude: 33.7490,
+            longitude: -84.3880,
+            zoom: 12,
             bearing: 0,
             pitch: 0,
             width: 500,
@@ -32,25 +32,8 @@ class Map extends React.Component {
 
 
     render() {
-        if(this.props.searches){
-            const locations = this.props.searches.map(location => {
-                const fullAddress =`${location.street}%${location.city}%${location.state}.json`;
-                const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${fullAddress}.json?access_token=${TOKEN}`
-                // const geocode = axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${TOKEN}`,)
-                try {
-                    const geocode = axios.get(`${geocodeUrl}`)
-                    return geocode
-                }
-                catch(error){
-                    console.log(error)
-                    return 
-                        const userLocation = `${this.props.auth.location}`;
-                }
-                }); 
-        }
-        const latitude = 74.0060;
-        const longitude = 40.7128;
         const {viewport} = this.state;
+        console.log(this.props.locations)
         return (
             <MapGL
                 className='mapbox-gl'
@@ -58,15 +41,14 @@ class Map extends React.Component {
                 mapStyle="mapbox://styles/mapbox/satellite-streets-v9"
                 onViewportChange={this.onChange}
                 mapboxApiAccessToken={TOKEN}>
-                <Marker
-                    // key={spot.objectid}
-                    // latitude={parseFloat(spot.latitude)}
-                    // longitude={parseFloat(spot.longitude)}
-                    latitude={latitude}
-                    longitude={longitude}>
-                    <img src="/wifi.svg" alt="" />
-                </Marker>
-            {/* {arrayOfMarkers} */}
+                {this.props.locations.map((location)=>{
+                    return <Marker
+                            latitude={location.latitude}
+                            longitude={location.longitude}
+                            offsetTop={-12}>
+                            <i style={{color:"#c62828", fontSize:"3em"}} className="fas fa-tools"></i>
+                        </Marker>
+                })}
             </MapGL>
         );
     }
@@ -89,14 +71,14 @@ class Map extends React.Component {
     // });
     // }
 }
-function mapStateToProps(state) {
-    return( {
-        auth: state.auth,
-        searches: state.queries.results,
-    })
-}
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators( {
-    }, dispatch)
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Map);
+// function mapStateToProps(state) {
+//     return( {
+//         auth: state.auth,
+//         searches: state.queries.results,
+//     })
+// }
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators( {
+//     }, dispatch)
+// }
+export default Map;
